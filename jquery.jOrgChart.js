@@ -141,7 +141,7 @@
           if($tr.hasClass('contracted')){
             $this.css('cursor','n-resize');
             $tr.removeClass('contracted').addClass('expanded');
-            $tr.nextAll("tr").css('visibility', '');
+            $tr.nextAll("tr").fadeIn();
 
             // Update the <li> appropriately so that if the tree redraws collapsed/non-collapsed nodes
             // maintain their appearance
@@ -149,7 +149,7 @@
           }else{
             $this.css('cursor','s-resize');
             $tr.removeClass('expanded').addClass('contracted');
-            $tr.nextAll("tr").css('visibility', 'hidden');
+            $tr.nextAll("tr").fadeOut();
 
             $node.addClass('collapsed');
           }
@@ -211,7 +211,7 @@
         $.each(classList, function(index,item) {
             if (item == 'collapsed') {
                 console.log($node);
-                $nodeRow.nextAll('tr').css('visibility', 'hidden');
+                $nodeRow.nextAll('tr').css('displa', 'none');
                     $nodeRow.removeClass('expanded');
                     $nodeRow.addClass('contracted');
                     $nodeDiv.css('cursor','s-resize');
