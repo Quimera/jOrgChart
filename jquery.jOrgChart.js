@@ -33,8 +33,7 @@
   $.fn.jOrgChart.defaults = {
     chartElement : 'body',
     depth      : -1,
-    chartClass : "jOrgChart",
-    dragAndDrop: false
+    chartClass : "jOrgChart"
   };
   
   var nodeCount = 0;
@@ -145,8 +144,7 @@
         var classList = $node.attr('class').split(/\s+/);
         $.each(classList, function(index,item) {
             if (item == 'collapsed') {
-                console.log($node);
-                $nodeRow.nextAll('tr').css('displa', 'none');
+                $nodeRow.nextAll('tr').css('display', 'none');
                     $nodeRow.removeClass('expanded');
                     $nodeRow.addClass('contracted');
                     $nodeDiv.css('cursor','s-resize');
@@ -161,7 +159,6 @@
     
     /* Prevent trees collapsing if a link inside a node is clicked */
     $nodeDiv.children('a').click(function(e){
-        console.log(e);
         e.stopPropagation();
     });
   };
